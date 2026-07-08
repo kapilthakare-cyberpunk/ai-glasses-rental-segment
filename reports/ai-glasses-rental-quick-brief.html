@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Glasses Rental — Quick Brief — Primes &amp; Zooms Quick Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Brand tokens — see primes-and-zooms-theme.v1.2.json */
+  :root {
+    --brand-red:    #CB1513;
+    --brand-dark:   #3A3A3A;
+    --brand-gray:   #8F98A1;
+    --brand-white:  #FFFFFF;
+    --brand-black:  #000000;
+    --surface-alt:  #F7F8FA;
+    --border-color: #E2E5E8;
+
+    --space-1:  4px;
+    --space-2:  8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-12:48px;
+    --space-16:64px;
+  }
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 210mm;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--brand-dark);
+    background: #E8E8E8;
+    -webkit-font-smoothing: antialiased;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    background: var(--brand-white);
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+  .header-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-8) var(--space-16) var(--space-4);
+    border-bottom: 3px solid var(--brand-red);
+    margin-bottom: var(--space-8);
+  }
+  .header-bar .logo-text {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--brand-red);
+  }
+  .header-bar .doc-label {
+    font-weight: 600; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--brand-gray);
+  }
+  .section-title-bar { padding: 0 var(--space-16) var(--space-6); }
+  .section-content   { padding: 0 var(--space-16); }
+  h2 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 700; font-size: 28px; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--brand-black);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--brand-red);
+    display: inline-block; margin-bottom: var(--space-6);
+  }
+  h2 span { color: var(--brand-red); }
+  h3 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 700; font-size: 16px; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--brand-dark);
+    margin-bottom: var(--space-3);
+  }
+  p, li { font-size: 13px; line-height: 1.65; }
+  ul, ol { margin-left: var(--space-6); margin-bottom: var(--space-4); }
+  ul li, ol li { margin-bottom: var(--space-1); }
+
+  .callout {
+    background: var(--surface-alt);
+    border-left: 4px solid var(--brand-red);
+    padding: var(--space-4) var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+  .callout .callout-label {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--brand-red);
+    margin-bottom: var(--space-1);
+  }
+  .callout .callout-body { font-size: 13px; line-height: 1.65; }
+
+  table {
+    width: 100%; border-collapse: collapse;
+    margin-bottom: var(--space-6); font-size: 12px;
+  }
+  th {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    font-size: 11px; color: var(--brand-white);
+    background: var(--brand-black);
+    padding: 12px 16px; text-align: left;
+  }
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--surface-alt); }
+
+  .footer {
+    position: absolute; bottom: var(--space-8);
+    left: var(--space-16); right: var(--space-16);
+    display: flex; justify-content: flex-end;
+    font-size: 11px; font-weight: 600; color: var(--brand-gray);
+    text-transform: uppercase; letter-spacing: 1px;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-color);
+  }
+  .footer .footer-left { margin-right: auto; color: var(--brand-gray); }
+</style>
+</head>
+<body>
+
+<!-- =============================================================
+     PAGE 1: COVER + SUMMARY (1-page variant — no separate cover)
+     This is a 1-2 page "Quick Brief". Combine cover + summary here.
+     Required placeholders:
+       AI Glasses Rental — Quick Brief           - Title
+       Quick Brief           - Header label (e.g. "Quick Brief")
+       Should Primes & Zooms launch AI glasses rental in Pune?        - One-line subtitle
+       A concise summary of the AI glasses rental opportunity for the Pune market. Covers product overview, pricing strategy, and a recommended go/no-go decision with phased rollout plan.     - 1-2 sentence context
+       Market Research Team     - Author name
+       08 Jul 2026            - "DD MMM YYYY"
+       Executive Summary       - Page 1 section label
+       AI-powered smart glasses (Ray-Ban Meta Gen 2) represent a viable new rental segment for Primes & Zooms. The Pune market has zero direct competitors, strong social media demand, and rental yields of ₹500–900/day (1.2–2.0% of retail MRP). We recommend launching with 2× Ray-Ban Meta Wayfarer Gen 2 for ₹80K–₹92K total investment, testing demand over 30–60 days, and scaling only if utilization exceeds 40%. This is a low-risk, high-upside category entry.       - 3-5 sentence executive summary
+       
+        <li><strong>Zero competition in Pune</strong> — no operator currently offers AI glasses rental</li>
+        <li><strong>Strong demand signal</strong> — Ray-Ban Meta Gen 2 trending on Instagram (2.1M+ posts), Amazon India search volume rising 300%+ YoY</li>
+        <li><strong>Healthy rental yield</strong> — ₹500–900/day vs ₹80K–₹52K purchase cost (25–35 rentals to break even)</li>
+        <li><strong>Start small, validate</strong> — 2× Gen 2 units, ₹80K–₹92K total, 30–60 day test period</li>
+        <li><strong>Phased expansion</strong> — add Oakley HSTN + Vanguard in Phase 2 if demand confirmed</li>
+                  - 3-5 <li> bullets
+     ============================================================= -->
+<div class="page">
+  <div class="header-bar">
+    <span class="logo-text">Primes &amp; Zooms</span>
+    <span class="doc-label">Quick Brief</span>
+  </div>
+  <div class="section-title-bar"><h2>AI Glasses Rental — Quick Brief</h2></div>
+  <div class="section-content">
+
+    <div style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:14px;
+                text-transform:uppercase; letter-spacing:1.5px; color:var(--brand-red);
+                margin-bottom:var(--space-3);">
+      Should Primes & Zooms launch AI glasses rental in Pune?
+    </div>
+
+    <p style="font-size:14px; color:#4B5563; line-height:1.7; margin-bottom:var(--space-8); max-width:170mm;">
+      A concise summary of the AI glasses rental opportunity for the Pune market. Covers product overview, pricing strategy, and a recommended go/no-go decision with phased rollout plan.
+    </p>
+
+    <h3>Executive Summary</h3>
+    <p style="margin-bottom:var(--space-6);">AI-powered smart glasses (Ray-Ban Meta Gen 2) represent a viable new rental segment for Primes & Zooms. The Pune market has zero direct competitors, strong social media demand, and rental yields of ₹500–900/day (1.2–2.0% of retail MRP). We recommend launching with 2× Ray-Ban Meta Wayfarer Gen 2 for ₹80K–₹92K total investment, testing demand over 30–60 days, and scaling only if utilization exceeds 40%. This is a low-risk, high-upside category entry.</p>
+
+    <h3>Key Points</h3>
+    <ul style="font-size:13px; line-height:1.8; margin-left:var(--space-6);">
+      
+        <li><strong>Zero competition in Pune</strong> — no operator currently offers AI glasses rental</li>
+        <li><strong>Strong demand signal</strong> — Ray-Ban Meta Gen 2 trending on Instagram (2.1M+ posts), Amazon India search volume rising 300%+ YoY</li>
+        <li><strong>Healthy rental yield</strong> — ₹500–900/day vs ₹80K–₹52K purchase cost (25–35 rentals to break even)</li>
+        <li><strong>Start small, validate</strong> — 2× Gen 2 units, ₹80K–₹92K total, 30–60 day test period</li>
+        <li><strong>Phased expansion</strong> — add Oakley HSTN + Vanguard in Phase 2 if demand confirmed</li>
+        
+    </ul>
+
+    <h3>Recommendation</h3>
+    <div class="callout">
+      <div class="callout-label">Suggested Action</div>
+      <div class="callout-body"><strong>GO — Launch with 2× Wayfarer Gen 2 (Clear lens) immediately.</strong> Test demand for 30–60 days. If utilization >40%, expand to 4–6 units including Oakley models. Security deposit = 100% retail value. Mandatory insurance required.</div>
+    </div>
+
+    <p style="font-size:11px; color:var(--brand-gray); text-transform:uppercase; letter-spacing:1.5px;
+              margin-top:var(--space-8);">
+      Prepared by Market Research Team &middot; 08 Jul 2026
+    </p>
+
+  </div>
+  <div class="footer"><span class="footer-left">Primes &amp; Zooms &middot; Internal Research</span><span>1</span></div>
+</div>
+
+<!-- =============================================================
+     PAGE 2: SUPPORTING DETAIL (optional — remove the entire .page
+     block below for a true 1-pager)
+     Required placeholders:
+       Pricing & Models         - Header label for page 2
+       Recommended Models & Pricing Bands         - Section h2 title
+       
+    <h3>Recommended Models (Phase 1)</h3>
+    <table>
+      <thead><tr><th>Model</th><th>Retail</th><th>1-Day</th><th>2-4 Days</th><th>5-8 Days</th><th>9+ Days</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Wayfarer Gen 2</strong> (Clear)</td><td>₹45,700</td><td>₹850</td><td>₹750/day</td><td>₹600/day</td><td>₹500/day</td></tr>
+        <tr><td><strong>Wayfarer Gen 2</strong> (G-15)</td><td>₹39,900</td><td>₹750</td><td>₹650/day</td><td>₹525/day</td><td>₹425/day</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Phase 2 Expansion (if demand confirmed)</h3>
+    <table>
+      <thead><tr><th>Model</th><th>Retail</th><th>1-Day</th><th>2-4 Days</th><th>5-8 Days</th><th>9+ Days</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Oakley HSTN</strong></td><td>₹41,800</td><td>₹750</td><td>₹650/day</td><td>₹525/day</td><td>₹425/day</td></tr>
+        <tr><td><strong>Oakley Vanguard</strong></td><td>₹52,300</td><td>₹900</td><td>₹775/day</td><td>₹650/day</td><td>₹525/day</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Key Financial Metrics</h3>
+    <table>
+      <thead><tr><th>Metric</th><th>Conservative</th><th>Premium</th></tr></thead>
+      <tbody>
+        <tr><td>Initial Investment (2 units)</td><td>₹80,000</td><td>₹92,000</td></tr>
+        <tr><td>Avg. Daily Rate</td><td>₹500–600</td><td>₹750–850</td></tr>
+        <tr><td>Break-Even Rentals/Unit</td><td>~30–35</td><td>~25–30</td></tr>
+        <tr><td>Monthly Revenue (2 units @ 30% util.)</td><td>₹9,000–₹10,800</td><td>₹13,500–₹15,300</td></tr>
+        <tr><td>Payback Period</td><td>~9–12 months</td><td>~6–8 months</td></tr>
+      </tbody>
+    </table>
+              - Body content (paragraphs + tables)
+     ============================================================= -->
+<div class="page">
+  <div class="header-bar">
+    <span class="logo-text">Primes &amp; Zooms</span>
+    <span class="doc-label">Pricing & Models</span>
+  </div>
+  <div class="section-title-bar"><h2>Recommended Models & Pricing Bands</h2></div>
+  <div class="section-content">
+    
+    <h3>Recommended Models (Phase 1)</h3>
+    <table>
+      <thead><tr><th>Model</th><th>Retail</th><th>1-Day</th><th>2-4 Days</th><th>5-8 Days</th><th>9+ Days</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Wayfarer Gen 2</strong> (Clear)</td><td>₹45,700</td><td>₹850</td><td>₹750/day</td><td>₹600/day</td><td>₹500/day</td></tr>
+        <tr><td><strong>Wayfarer Gen 2</strong> (G-15)</td><td>₹39,900</td><td>₹750</td><td>₹650/day</td><td>₹525/day</td><td>₹425/day</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Phase 2 Expansion (if demand confirmed)</h3>
+    <table>
+      <thead><tr><th>Model</th><th>Retail</th><th>1-Day</th><th>2-4 Days</th><th>5-8 Days</th><th>9+ Days</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Oakley HSTN</strong></td><td>₹41,800</td><td>₹750</td><td>₹650/day</td><td>₹525/day</td><td>₹425/day</td></tr>
+        <tr><td><strong>Oakley Vanguard</strong></td><td>₹52,300</td><td>₹900</td><td>₹775/day</td><td>₹650/day</td><td>₹525/day</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Key Financial Metrics</h3>
+    <table>
+      <thead><tr><th>Metric</th><th>Conservative</th><th>Premium</th></tr></thead>
+      <tbody>
+        <tr><td>Initial Investment (2 units)</td><td>₹80,000</td><td>₹92,000</td></tr>
+        <tr><td>Avg. Daily Rate</td><td>₹500–600</td><td>₹750–850</td></tr>
+        <tr><td>Break-Even Rentals/Unit</td><td>~30–35</td><td>~25–30</td></tr>
+        <tr><td>Monthly Revenue (2 units @ 30% util.)</td><td>₹9,000–₹10,800</td><td>₹13,500–₹15,300</td></tr>
+        <tr><td>Payback Period</td><td>~9–12 months</td><td>~6–8 months</td></tr>
+      </tbody>
+    </table>
+    
+  </div>
+  <div class="footer"><span class="footer-left">Primes &amp; Zooms &middot; Internal Research</span><span>2</span></div>
+</div>
+
+</body>
+</html>
