@@ -133,6 +133,39 @@
     border-top: 1px solid var(--border-color);
   }
   .footer .footer-left { margin-right: auto; color: var(--brand-gray); }
+
+  /* Product gallery */
+  .product-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: var(--space-3); margin-bottom: 0;
+  }
+  .product-card {
+    background: var(--surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 2px; padding: var(--space-3);
+    display: flex; gap: var(--space-3); align-items: center;
+  }
+  .product-card img {
+    width: 85px; height: 85px; object-fit: contain;
+    background: var(--brand-white); border-radius: 2px;
+    border: 1px solid var(--border-color);
+  }
+  .product-card .info { flex: 1; }
+  .product-card .info .name {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 700; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--brand-dark);
+    margin-bottom: 1px;
+  }
+  .product-card .info .price {
+    font-size: 10px; font-weight: 600; color: var(--brand-red);
+    margin-bottom: var(--space-1);
+  }
+  .product-card .info .angle {
+    font-size: 8px; text-transform: uppercase; letter-spacing: 0.4px;
+    color: var(--brand-gray); display: block;
+    margin-bottom: 1px;
+  }
 </style>
 </head>
 <body>
@@ -279,7 +312,39 @@
         <tr><td>Payback Period</td><td>~9–12 months</td><td>~6–8 months</td></tr>
       </tbody>
     </table>
-    
+
+    <h3 style="margin-top:var(--space-4);">Product Gallery</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="../images/wayfarer-gen1/gen1_ront_view_of_ay_an_eta_ayfarer_en_1_glasses.webp" alt="Wayfarer Gen 1" loading="lazy">
+        <div class="info"><div class="name">Wayfarer Gen 1</div><div class="price">Rs.500–Rs.750/day</div></div>
+      </div>
+      <div class="product-card">
+        <img src="../images/wayfarer-gen2/wayfarer-gen2_ront_view_of_ay_an_eta_ayfarer_glasses_with_att_lack_frames__1.webp" alt="Wayfarer Gen 2" loading="lazy">
+        <div class="info"><div class="name">Wayfarer Gen 2</div><div class="price">Rs.750–Rs.850/day</div></div>
+      </div>
+      <div class="product-card">
+        <img src="../images/skyler-gen1/gen1_ront_view_of_ay_an_eta_kyler_en_1_glasses.webp" alt="Skyler Gen 1" loading="lazy">
+        <div class="info"><div class="name">Skyler Gen 1</div><div class="price">Rs.500–Rs.700/day</div></div>
+      </div>
+      <div class="product-card">
+        <img src="../images/skyler-gen2/skyler-gen2_ront_view_of_ay_an_eta_glasses_with_hiny_lack_frames_with_re_1.webp" alt="Skyler Gen 2" loading="lazy">
+        <div class="info"><div class="name">Skyler Gen 2</div><div class="price">Rs.650–Rs.800/day</div></div>
+      </div>
+      <div class="product-card">
+        <img src="../images/headliner-gen2/headliner-gen2_ront_view_of_ay_an_eta_eadliner_glasses_with_atte_lack_frame_1.webp" alt="Headliner Gen 2" loading="lazy">
+        <div class="info"><div class="name">Headliner Gen 2</div><div class="price">Rs.650–Rs.850/day</div></div>
+      </div>
+      <div class="product-card">
+        <img src="../images/oakley-hstn/oakley-hstn_ront_view_of_akley_eta_glasses_with_lack_frame_and_lear_lens_2.webp" alt="Oakley HSTN" loading="lazy">
+        <div class="info"><div class="name">Oakley HSTN</div><div class="price">Rs.750/day</div></div>
+      </div>
+      <div class="product-card">
+        <img src="../images/oakley-vanguard/oakley-vanguard_ront_view_of_akley_eta_anguard_glasses_with_att_lack_frame_a_2.webp" alt="Oakley Vanguard" loading="lazy">
+        <div class="info"><div class="name">Oakley Vanguard</div><div class="price">Rs.900/day</div></div>
+      </div>
+    </div>
+
   </div>
   <div class="footer"><span class="footer-left">Primes &amp; Zooms &middot; Internal Research</span><span>2</span></div>
 </div>
